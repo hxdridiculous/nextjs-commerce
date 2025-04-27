@@ -1,4 +1,4 @@
-import { registerCustomer } from "lib/shopify/auth";
+import { createCustomer } from "lib/shopify/auth";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const result = await registerCustomer({
+    const result = await createCustomer({
       email,
       password,
       firstName,
